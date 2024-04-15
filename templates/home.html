@@ -1,21 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'navbar.html' %}
+{% block content %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM Software Home Page</title>
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CDN -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-MwJMEbJyVmYXbD8xSZmodjNXCb3XXrTcR+Vrj3PQARsI7TtoQV79nDnkrD3gRl+WemQ1G89sdradTAF2zRWD2g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Custom CSS */
         body {
             background-color: #f8f9fa;
-            font-family: 'Poppins', sans-serif;
+            font-family: sans-serif;
             color: #495057;
         }
-
+        h1,p{
+            font-family: cursive;
+        }
         .navbar {
             background-color: #f8f9fa;
             border-bottom: 1px solid #dee2e6;
@@ -85,27 +84,16 @@
             height: auto;
         }
     </style>
-</head>
-<body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">CRM Software</a>
-</nav>
-
-<!-- Main Content -->
 <div class="container mt-5">
     <div class="jumbotron text-center">
-        <h1 class="display-4">Welcome to <span class="text-primary">CRM Software</span></h1>
+        <h1 style="font-family: sans-serif;" class="display-4">Welcome to <span class="text-primary">CRM Software</span></h1>
         <p class="lead">Manage your customer relationships with ease!</p>
     </div>
-
-    <!-- Dashboard Section -->
     <div class="dashboard">
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header"><i class="fas fa-tachometer-alt"></i> Dashboard</div>
                     <div class="card-body">
                         <h5 class="card-title">Your Dashboard</h5>
                         <p class="card-text">View your key metrics and insights about your customers, sales performance, marketing campaigns, and more.</p>
@@ -115,7 +103,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">Contacts</div>
+                    <div class="card-header"><i class="fas fa-address-book"></i> Contacts</div>
                     <div class="card-body">
                         <h5 class="card-title">Manage Contacts</h5>
                         <p class="card-text">View, add, edit, and delete contacts. Keep track of all your customer interactions in one place.</p>
@@ -125,7 +113,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">Tasks</div>
+                    <div class="card-header"><i class="fas fa-tasks"></i> Tasks</div>
                     <div class="card-body">
                         <h5 class="card-title">Manage Tasks</h5>
                         <p class="card-text">Create, assign, and track tasks for yourself and your team. Stay organized and productive.</p>
@@ -139,8 +127,6 @@
     <div class="jumbotron text-center">
         <h1 style="font-style: italic;" class="display-4">Keep Opportunities Within View</h1>
     </div>
-
-    <!-- Image Section -->
     <div class="row mt-5">
         <div class="col-md-6">
             <img src="https://mind-force.de/files/2023/02/Salesforce-GIF.gif" class="img-fluid" alt="Placeholder Image">
@@ -173,12 +159,4 @@
     </div>
 </div>
 
-<!-- Footer -->
-
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-</body>
-</html>
+{% endblock %}
