@@ -1,19 +1,85 @@
-<!DOCTYPE HTML>
-<html>
-
-<head>
+{% extends 'navbar2.html' %}
+{% block content %}
+    <title style="margin-top: 10px;">Dashboard</title>
     <style>
+        .card{
+            height: 200px;
+        }
     </style>
-</head>
-<body>
-    <h3>Dragged Card</h3>
-    <div id="getData">
-        {% if dragged_html %}
-            {{ dragged_html | safe}}
-        {% else %}
-            <p>No card dragged</p>
-        {% endif %}
-    </div>
-</body>
+    <div style=" margin-bottom: 80px; margin-top: 50px;" class="container">
+        <h1>Welcome to the Dashboard</h1>
+        <p>This is where you can view important information and statistics about your CRM system.</p>
+        
+        <!-- Example Cards to Display Statistics -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Sales</h5>
+                        <p class="card-text">View the total number of sales made and track progress</p>
+                        <a href="#" class="btn btn-secondary">View Sales</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">New Customers</h5>
+                        <p class="card-text">See how many new customers have joined recently.</p>
+                        <a href="#" class="btn btn-success">View Customers</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pending Tasks</h5>
+                        <p class="card-text">Check out the tasks that are pending completion.</p>
+                        <a href="#" class="btn btn-info">View Tasks</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Example List of Recent Activities -->
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Recent Notifications</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">New contact added: John Smith</li>
+                            <li class="list-group-item">Task assigned: Follow up with client XYZ</li>
+                            <li class="list-group-item">New sale recorded: $1000</li>
+                            <li class="list-group-item">Meeting scheduled: 3:00 PM, Room 101</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-</html>
+            <!-- Progress and Goal Tracking -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Progress Tracking</h5>
+                        <div class="progress mb-3">
+                            <div class="progress-bar"  role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                        </div>
+                        <p class="card-text">Progress towards achieving a specific goal.</p>
+                        <a href="#" class="btn btn-success">View Goal</a>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Goal Tracking</h5>
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                        </div>
+                        <p class="card-text">Progress towards achieving a long-term goal.</p>
+                        <a href="#" class="btn btn-success">View Goal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

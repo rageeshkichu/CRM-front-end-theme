@@ -2,14 +2,58 @@
 <html>
 
 <head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .card-container .card {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+        }
+
         #getData {
-            width: 250px;
+            width: calc(33.33% - 20px);
             height: 200px;
             padding: 10px;
             border: 1px solid #4f4d4d;
+            margin-bottom: 20px;
         }
     </style>
+</head>
+
+<body>
+    <a href="{% url 'dash' %}" class="btn btn-primary mb-4">Go to dash</a>
+    <h3>Cards</h3>
+    <div class="card-container">
+        <div class="card" style="background-color: aquamarine;" draggable="true" ondragstart="drag(event)" id="dragData1">
+            <img style="width: 100px; height: 100px;" class="card-img-top" src="https://t3.ftcdn.net/jpg/05/55/82/46/360_F_555824600_OvpqblejjhjExcDDulsWkY3RxDrAr2hF.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Nature 1</h5>
+                <p class="card-text">Beauty of nature 1</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" style="background-color: aquamarine;" draggable="true" ondragstart="drag(event)" id="dragData2">
+            <img style="width: 100px; height: 100px;" class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT26oM2M4tvZMnMHqrhPaDOZy0LmGaNZlPwuAIJmGl47Q&s" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Nature 2</h5>
+                <p class="card-text">Beauty of nature 2</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div style="height: 300px;" id="getData" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h3>Remove the card</h3>
+        </div>
+    </div>
+
     <script>
         function allowDrop(event) {
             event.preventDefault();
@@ -24,40 +68,22 @@
             var fetchData = event.dataTransfer.getData("text");
             var draggedElement = document.getElementById(fetchData);
             event.target.appendChild(draggedElement);
-			draggedElement.parentNode.removeChild(draggedElement);
-			var draggedHTML = draggedElement.outerHTML;
-        var encodedHTML = encodeURIComponent(draggedHTML);
-        window.location.href = "{% url 'dash' %}?draggedHTML=" + encodedHTML;
+            var draggedHTML = draggedElement.outerHTML;
+            // Retrieve existing saved HTML array from local storage
+            var savedHTMLArray = JSON.parse(localStorage.getItem("draggedHTMLArray")) || [];
+            // Add the dragged HTML to the array
+            savedHTMLArray.push(draggedHTML);
+            // Save the updated HTML array to local storage
+            localStorage.setItem("draggedHTMLArray", JSON.stringify(savedHTMLArray));
         }
+
+        // Remove the dragged elements from their original location after being dropped
+        document.querySelectorAll("[draggable=true]").forEach(function(element) {
+            element.addEventListener("dragend", function(event) {
+                event.target.parentNode.removeChild(event.target);
+            });
+        });
     </script>
-</head>
-
-<body>
-    <h3>Remove the card</h3>
-    <div id="getData" ondrop="drop(event)" ondragover="allowDrop(event)">
-    </div>
-    <br>
-
-    <div style="background-color: aquamarine; width: 250px; height: 250px;" draggable="true" ondragstart="drag(event)" id="dragData1">
-        <div class="card" style="width: 18rem;">
-            <img style="width: 100px; height: 100px;" class="card-img-top" src="https://t3.ftcdn.net/jpg/05/55/82/46/360_F_555824600_OvpqblejjhjExcDDulsWkY3RxDrAr2hF.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Nature</h5>
-                <p class="card-text">Beauty of nature</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-	<br>
-	<div style="background-color: aquamarine; width: 250px; height: 250px;" draggable="true" ondragstart="drag(event)" id="dragData2">
-        <div class="card" style="width: 18rem;">
-            <img style="width: 100px; height: 100px;" class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT26oM2M4tvZMnMHqrhPaDOZy0LmGaNZlPwuAIJmGl47Q&s" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Nature</h5>
-                <p class="card-text">Beauty of nature</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
 </body>
+
 </html>

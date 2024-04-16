@@ -23,3 +23,6 @@ def dash(request):
     dragged_html_encoded = request.GET.get('draggedHTML', None)
     dragged_html = unquote(dragged_html_encoded) if dragged_html_encoded else None
     return render(request, 'dash.html', {'dragged_html': dragged_html})
+
+def archives(request):
+    return render(request,'archives.html')

@@ -76,7 +76,7 @@
             list-style-type: none;
         }
         .footer {
-            position: absolute;
+            
             left: 0;
             bottom: 0;
             width: 100%;
@@ -96,8 +96,7 @@
     </style>
 </head>
 <body>
-    <div class="con">
-        <div class="con1">
+    
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#" onclick="toggleNavbar()">CRM</a>
             </nav>
@@ -109,7 +108,10 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a class="nav-link" href="{% url 'dash' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'archives' %}"><i class="fas fa-tachometer-alt"></i> Archives</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href=""><i class="fas fa-money-bill-wave"></i> Finance</a>
@@ -143,16 +145,18 @@
                 }
 
             </script>
-        </div>
+        
+
+        {% block content %}
+        {% endblock %}
         <footer class="footer fixed-footer">
 
-            <div class="container">
+            <div class="containe">
                 <span>&copy; 2024 CRM Software. All rights reserved.</span>
             </div>
 
         </footer>
-    </div>
+    
 </body>
 </html>
-{% block content %}
-{% endblock %}
+

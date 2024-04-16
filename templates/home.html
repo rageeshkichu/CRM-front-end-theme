@@ -7,10 +7,13 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-MwJMEbJyVmYXbD8xSZmodjNXCb3XXrTcR+Vrj3PQARsI7TtoQV79nDnkrD3gRl+WemQ1G89sdradTAF2zRWD2g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body {
+        body,html {
             background-color: #f8f9fa;
             font-family: sans-serif;
             color: #495057;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
         h1,p{
             font-family: cursive;
@@ -80,80 +83,498 @@
         }
 
         .img-fluid{
+            max-width: 100%;
             width: 100%;
             height: auto;
         }
+        .success-stories-carousel {
+            margin-top: 50px;
+        }
+
+        .success-story {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .success-story img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-top: 50px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        
+        .illustration {
+            max-width: 100%;
+            height: auto;
+            margin-top: 50px;
+        }
+
+       
+        .primary-bg {
+            background-color: #007bff;
+        }
+
+        .secondary-bg {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+        .jumbotron {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .image-container {
+            margin-top: 20px;
+        }
+
+        .success-stories-carousel, .video-container, .illustration, .jumbotron, .primary-bg, .secondary-bg {
+            padding: 20px 10px;
+        }
+    }
+        
+
+    .jumbotron h1.display-4 {
+    word-wrap: break-word;
+    }
+
+
+
+    .custom-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; 
+}
+
+.custom-card-container .card {
+    width: calc(33.33% - 20px);
+    height: 300px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card-container .card .card-img-top {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.custom-card-container .card .card-body {
+    padding: 20px;
+}
+
+.custom-card-container .card .card-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.custom-card-container .card .card-text {
+    font-size: 16px;
+}
+
+#getData {
+    flex: 0 0 calc(33.33% - 20px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #4f4d4d;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000; 
+        display: none; 
+    }
+
+    
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999; 
+        display: none; 
+    }
+
+    .progress-container {
+            margin-top: 20px;
+        }
+
+        .progress-label {
+            margin-bottom: 10px;
+        }
+
+
+        .leaderboard-container {
+    margin-top: 50px;
+}
+
+.leaderboard-heading {
+    text-align: center;
+}
+
+.leaderboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.leaderboard-rank {
+    flex: 0 0 50px;
+    text-align: center;
+}
+
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.user-score {
+    color: #6c757d;
+}
+
+
+.new-progress-bar {
+    background-color: #28a745; 
+}
+
+.new-progress {
+    margin-top: 5px;
+}
+
+
+
     </style>
 <div class="container mt-5">
-    <div class="jumbotron text-center">
+    <div style="margin-top: 80px;" class="jumbotron text-center">
         <h1 style="font-family: sans-serif;" class="display-4">Welcome to <span class="text-primary">CRM Software</span></h1>
         <p class="lead">Manage your customer relationships with ease!</p>
     </div>
     <div class="dashboard">
         <div class="row">
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header"><i class="fas fa-tachometer-alt"></i> Dashboard</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Your Dashboard</h5>
-                        <p class="card-text">View your key metrics and insights about your customers, sales performance, marketing campaigns, and more.</p>
-                        <a href="#" class="btn btn-primary">Go to Dashboard</a>
+                <div class="card border-0 rounded-0 shadow">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <i class="fas fa-tachometer-alt fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title">Dashboard</h5>
+                        <p class="card-text text-center">View your key metrics and insights about your customers, sales performance, marketing campaigns, and more.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Go to Dashboard</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header"><i class="fas fa-address-book"></i> Contacts</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Manage Contacts</h5>
-                        <p class="card-text">View, add, edit, and delete contacts. Keep track of all your customer interactions in one place.</p>
-                        <a href="#" class="btn btn-primary">Go to Contacts</a>
+                <div class="card border-0 rounded-0 shadow">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <i class="fas fa-address-book fa-3x mb-3 text-success"></i>
+                        <h5 class="card-title">Contacts</h5>
+                        <p class="card-text text-center">View, add, edit, and delete contacts. Keep track of all your customer interactions in one place.</p>
+                        <a href="#" class="btn btn-success mt-auto">Go to Contacts</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header"><i class="fas fa-tasks"></i> Tasks</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Manage Tasks</h5>
-                        <p class="card-text">Create, assign, and track tasks for yourself and your team. Stay organized and productive.</p>
-                        <a href="#" class="btn btn-primary">Go to Tasks</a>
+                <div class="card border-0 rounded-0 shadow">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <i class="fas fa-tasks fa-3x mb-3 text-info"></i>
+                        <h5 class="card-title">Tasks</h5>
+                        <p class="card-text text-center">Create, assign, and track tasks for yourself and your team. Stay organized and productive.</p>
+                        <a href="#" class="btn btn-info mt-auto">Go to Tasks</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+
+     
+        <div class="success-stories-carousel">
+            <h2 class="text-center mb-4">Customer Success Stories</h2>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="success-story">
+                            <h5>Andrews</h5>
+                            <p>“CRM is your GPS to a better route on your Business Development journey.”</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="success-story">
+                            <h5>Morgan</h5>
+                            <p>“Yes, CRM is all about Customer Relationship Management … but it is also about prospect relationships.”</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gEj9u0M8cLg?si=mExxQ3pRR45R17or" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="jumbotron text-center">
+            <h1 style="font-style: italic;" class="display-4">Keep Opportunities Within View</h1>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <img src="https://mind-force.de/files/2023/02/Salesforce-GIF.gif" class="img-fluid" alt="Placeholder Image">
+            </div>
+            <div class="col-md-6">
+                <img src="https://mind-force.de/files/2023/02/Salesforce-GIF.gif" class="img-fluid" alt="Placeholder Image">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container progress-container">
+        <div class="progress-label">
+            <h3>CRM Software Onboarding Progress</h3>
+        </div>
+        <div class="progress">
+            <div class="progress-bar bg-success"  role="progressbar" style="width: 75%; ;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-5">
+        <div style="margin-top: 80px;" class="custom-card-container">
+            <div class="card" draggable="true" ondragstart="drag(event)" id="dragData1">
+                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/05/55/82/46/360_F_555824600_OvpqblejjhjExcDDulsWkY3RxDrAr2hF.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Customer review</h5>
+                    <p class="card-text">Add Your views here</p>
+                </div>
+            </div>
+    
+            <div class="card" draggable="true" ondragstart="drag(event)" id="dragData2">
+                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT26oM2M4tvZMnMHqrhPaDOZy0LmGaNZlPwuAIJmGl47Q&s" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Customer review</h5>
+                    <p class="card-text">Add Your views here</p>
+                </div>
+            </div>
+    
+            <div style="height: 300px;" id="getData" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h3 style="text-align: center;">Archive review</h3>
+            </div>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+    <h2>Review Archived</h2>
+</div>
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var fetchData = event.dataTransfer.getData("text");
+            var draggedElement = document.getElementById(fetchData);
+            event.target.appendChild(draggedElement);
+            var draggedHTML = draggedElement.outerHTML;
+            
+            var savedHTMLArray = JSON.parse(localStorage.getItem("draggedHTMLArray")) || [];
+            
+            savedHTMLArray.push(draggedHTML);
+            
+            localStorage.setItem("draggedHTMLArray", JSON.stringify(savedHTMLArray));
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }, 2000);
+        }
+
+        
+        document.querySelectorAll("[draggable=true]").forEach(function(element) {
+            element.addEventListener("dragend", function(event) {
+                event.target.parentNode.removeChild(event.target);
+            });
+        });
+    </script>
+
+
+
+
+
+
+    
+
+    <div class="container mt-5">
+        <div class="jumbotron text-center primary-bg">
+            <h1 style="font-style: italic;" class="display-4 text-white">Ready to revolutionize your CRM experience?</h1>
+            <p class="lead text-white">Get started today and unlock the full potential of your customer relationships!</p>
+            <a href="#" class="btn btn-lg btn-light mt-3">Sign Up Now</a>
+        </div>
+    </div>
+        
 
     <div class="jumbotron text-center">
-        <h1 style="font-style: italic;" class="display-4">Keep Opportunities Within View</h1>
-    </div>
-    <div class="row mt-5">
-        <div class="col-md-6">
-            <img src="https://mind-force.de/files/2023/02/Salesforce-GIF.gif" class="img-fluid" alt="Placeholder Image">
-        </div>
-        <div class="col-md-6">
-            <img src="https://www.sutisoft.com/crm-software/img/suticrm-infographics-final.png" class="img-fluid" alt="Placeholder Image">
+        <h1 style="font-style: italic;" class="display-4">Never miss out on a follow up</h1>
+        <p class="lead">Schedule calls, meetings, mailings, or quotations, and we automatically plan the next activity based on your sales script.</p>
+        <div style="margin-top: 50px;" class="image-container">
+            <img src="https://assets.entrepreneur.com/content/3x2/2000/20160713045226-CRM.jpeg" class="img-fluid" alt="Placeholder Image" style="max-width: 50%; margin: 0 auto;">
         </div>
     </div>
+    
 
-
-    <div class="jumbotron text-center">
-        <h1 style="font-style: italic;" class="display-4 ">Never miss out on a follow up</h1>
-        <p class="lead">Schedule calls, meetings, mailings, or quotations, and we automatically plans the next activity based on your sales script.</p>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col-md-12 text-center">
-            <img src="https://assets.entrepreneur.com/content/3x2/2000/20160713045226-CRM.jpeg" class="img-fluid" alt="Placeholder Image">
+   
+    <div class="container leaderboard-container">
+        <div class="leaderboard-heading">
+            <h3>Leaderboard</h3>
+        </div>
+        <div class="leaderboard">
+            <div class="leaderboard-item">
+                <div class="leaderboard-rank">1</div>
+                <div class="leaderboard-user">
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Andrews</span>
+                        <div class="progress-bar new-progress">
+                            <div class="progress new-progress-bar" style="width: 80%;"></div>
+                        </div>
+                        <span class="user-score">900 points</span>
+                    </div>
+                </div>
+            </div>
+            <div class="leaderboard-item">
+                <div class="leaderboard-rank">2</div>
+                <div class="leaderboard-user">
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Morgan</span>
+                        <div class="progress-bar new-progress">
+                            <div class="progress new-progress-bar" style="width: 75%;"></div>
+                        </div>
+                        <span class="user-score">950 points</span>
+                    </div>
+                </div>
+            </div>
+            <div class="leaderboard-item">
+                <div class="leaderboard-rank">3</div>
+                <div class="leaderboard-user">
+                    <div class="user-avatar">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Smith</span>
+                        <div class="progress-bar new-progress">
+                            <div class="progress new-progress-bar" style="width: 70%;"></div>
+                        </div>
+                        <span class="user-score">1000 points</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
+
+    
 
     <div class="jumbotron text-center">
         <h1 style="font-style: italic;" class="display-4 ">Integrates with</h1>
     </div>
 
     <div class="row mt-5">
-        <div class="col-md-6 mx-auto">
+        <div class="col-md-5 mx-auto">
             <img src="https://media.sproutsocial.com/uploads/2023/10/Social-Media-Algorithm-Final-Final.jpg" class="img-fluid" alt="Placeholder Image">
         </div>
     </div>
