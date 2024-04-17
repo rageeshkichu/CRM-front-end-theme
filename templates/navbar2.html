@@ -20,7 +20,7 @@
             height: 100vh;
             position: fixed;
             top: 0;
-            left: -250px; 
+            left: 0; /* Changed from -250px to 0 */
             width: 250px;
             z-index: 1;
             overflow-y: auto;
@@ -76,7 +76,6 @@
             list-style-type: none;
         }
         .footer {
-            
             left: 0;
             bottom: 0;
             width: 100%;
@@ -97,66 +96,63 @@
 </head>
 <body>
     
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#" onclick="toggleNavbar()">CRM</a>
-            </nav>
+<nav class="navbar navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#" onclick="toggleNavbar()">CRM</a>
+</nav>
 
-            <nav class="navbar-vertical" id="navbarVertical">
-                <ul class="flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
-                    </li>
+<nav class="navbar-vertical" id="navbarVertical">
+    <ul class="flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
+        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'dash' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'archives' %}"><i class="fas fa-tachometer-alt"></i> Archives</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fas fa-money-bill-wave"></i> Finance</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fas fa-chart-line"></i> Sales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fas fa-users"></i> Human Resource</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fas fa-globe"></i> Websites</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fas fa-cogs"></i> Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href=""><i class="fas fa-check-circle"></i> Productivity</a>
-                    </li>
-                </ul>
-            </nav>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'dash' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'archives' %}"><i class="fas fa-tachometer-alt"></i> Archives</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href=""><i class="fas fa-money-bill-wave"></i> Finance</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href=""><i class="fas fa-chart-line"></i> Sales</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href=""><i class="fas fa-users"></i> Human Resource</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href=""><i class="fas fa-globe"></i> Websites</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href=""><i class="fas fa-cogs"></i> Services</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href=""><i class="fas fa-check-circle"></i> Productivity</a>
+        </li>
+    </ul>
+</nav>
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-            <script>
-                function toggleNavbar() {
-                    var navbar = document.getElementById('navbarVertical');
-                    navbar.classList.toggle('open');
-                }
+<script>
+    function toggleNavbar() {
+        var navbar = document.getElementById('navbarVertical');
+        navbar.classList.toggle('open');
+    }
 
-            </script>
-        
+</script>
 
-        {% block content %}
-        {% endblock %}
-        <footer class="footer fixed-footer">
+{% block content %}
+{% endblock %}
 
-            <div class="containe">
-                <span>&copy; 2024 CRM Software. All rights reserved.</span>
-            </div>
+<footer class="footer fixed-footer">
+    <div class="containe">
+        <span>&copy; 2024 CRM Software. All rights reserved.</span>
+    </div>
+</footer>
 
-        </footer>
-    
 </body>
 </html>
-

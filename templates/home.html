@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-MwJMEbJyVmYXbD8xSZmodjNXCb3XXrTcR+Vrj3PQARsI7TtoQV79nDnkrD3gRl+WemQ1G89sdradTAF2zRWD2g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body,html {
-            background-color: #f8f9fa;
+            background-color: #eaf2e3;
             font-family: sans-serif;
             color: #495057;
             overflow-x: hidden;
@@ -58,7 +58,7 @@
         }
 
         .card-body {
-            background-color: #ffffff;
+            background-color: #f2f2f2;
         }
 
         .card-title {
@@ -169,86 +169,25 @@
         .success-stories-carousel, .video-container, .illustration, .jumbotron, .primary-bg, .secondary-bg {
             padding: 20px 10px;
         }
-    }
+        .opp{
+            margin-top: 10px;
+        }
+
+        .video-container{
+            height: 400px;
+        }
         
+    }
+      .opp{
+        background-color: #E6E6FA;
+        border-top-left-radius: 30%;
+            border-top-right-radius: 30%; 
+      }  
 
     .jumbotron h1.display-4 {
     word-wrap: break-word;
     }
 
-
-
-    .custom-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start; 
-}
-
-.custom-card-container .card {
-    width: calc(33.33% - 20px);
-    height: 300px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.custom-card-container .card .card-img-top {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-}
-
-.custom-card-container .card .card-body {
-    padding: 20px;
-}
-
-.custom-card-container .card .card-title {
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.custom-card-container .card .card-text {
-    font-size: 16px;
-}
-
-#getData {
-    flex: 0 0 calc(33.33% - 20px); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #4f4d4d;
-    border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-
-.popup {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-        z-index: 1000; 
-        display: none; 
-    }
-
-    
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 999; 
-        display: none; 
-    }
 
     .progress-container {
             margin-top: 20px;
@@ -315,10 +254,25 @@
     margin-top: 5px;
 }
 
-
-
+.app{
+    background-color: #F5F5F5;
+        
+}
+.cpp{
+    background-color: #B2EBF2;
+        border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+}
+.mpp{
+    background-color: #F5F5DC;
+        border-top-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+}
     </style>
 <div class="container mt-5">
+    <div class="app">
     <div style="margin-top: 80px;" class="jumbotron text-center">
         <h1 style="font-family: sans-serif;" class="display-4">Welcome to <span class="text-primary">CRM Software</span></h1>
         <p class="lead">Manage your customer relationships with ease!</p>
@@ -356,6 +310,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     
 
@@ -395,6 +350,7 @@
         </div>
     </div>
 
+    <div class="opp">
     <div class="container mt-5">
         <div class="jumbotron text-center">
             <h1 style="font-style: italic;" class="display-4">Keep Opportunities Within View</h1>
@@ -408,6 +364,7 @@
             </div>
         </div>
     </div>
+    </div>
 
 
     <div class="container progress-container">
@@ -420,95 +377,22 @@
     </div>
 
 
-
     <div class="container mt-5">
-        <div style="margin-top: 80px;" class="custom-card-container">
-            <div class="card" draggable="true" ondragstart="drag(event)" id="dragData1">
-                <img class="card-img-top" src="https://t3.ftcdn.net/jpg/05/55/82/46/360_F_555824600_OvpqblejjhjExcDDulsWkY3RxDrAr2hF.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Customer review</h5>
-                    <p class="card-text">Add Your views here</p>
-                </div>
-            </div>
-    
-            <div class="card" draggable="true" ondragstart="drag(event)" id="dragData2">
-                <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT26oM2M4tvZMnMHqrhPaDOZy0LmGaNZlPwuAIJmGl47Q&s" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Customer review</h5>
-                    <p class="card-text">Add Your views here</p>
-                </div>
-            </div>
-    
-            <div style="height: 300px;" id="getData" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h3 style="text-align: center;">Archive review</h3>
-            </div>
-        </div>
-    </div>
-    
-    <div class="overlay" id="overlay"></div>
-<div class="popup" id="popup">
-    <h2>Review Archived</h2>
-</div>
-    <script>
-        function allowDrop(event) {
-            event.preventDefault();
-        }
-
-        function drag(event) {
-            event.dataTransfer.setData("text", event.target.id);
-        }
-
-        function drop(event) {
-            event.preventDefault();
-            var fetchData = event.dataTransfer.getData("text");
-            var draggedElement = document.getElementById(fetchData);
-            event.target.appendChild(draggedElement);
-            var draggedHTML = draggedElement.outerHTML;
-            
-            var savedHTMLArray = JSON.parse(localStorage.getItem("draggedHTMLArray")) || [];
-            
-            savedHTMLArray.push(draggedHTML);
-            
-            localStorage.setItem("draggedHTMLArray", JSON.stringify(savedHTMLArray));
-            document.getElementById('popup').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-
-        setTimeout(function() {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }, 2000);
-        }
-
-        
-        document.querySelectorAll("[draggable=true]").forEach(function(element) {
-            element.addEventListener("dragend", function(event) {
-                event.target.parentNode.removeChild(event.target);
-            });
-        });
-    </script>
-
-
-
-
-
-
-    
-
-    <div class="container mt-5">
-        <div class="jumbotron text-center primary-bg">
+        <div style="margin-top: 100px;" class="jumbotron text-center primary-bg">
             <h1 style="font-style: italic;" class="display-4 text-white">Ready to revolutionize your CRM experience?</h1>
             <p class="lead text-white">Get started today and unlock the full potential of your customer relationships!</p>
             <a href="#" class="btn btn-lg btn-light mt-3">Sign Up Now</a>
         </div>
     </div>
         
-
+    <div class="mpp">
     <div class="jumbotron text-center">
         <h1 style="font-style: italic;" class="display-4">Never miss out on a follow up</h1>
         <p class="lead">Schedule calls, meetings, mailings, or quotations, and we automatically plan the next activity based on your sales script.</p>
         <div style="margin-top: 50px;" class="image-container">
-            <img src="https://assets.entrepreneur.com/content/3x2/2000/20160713045226-CRM.jpeg" class="img-fluid" alt="Placeholder Image" style="max-width: 50%; margin: 0 auto;">
+            <img src="https://assets.entrepreneur.com/content/3x2/2000/20160713045226-CRM.jpeg" class="img-fluid" alt="Placeholder Image" style="max-width: 80%; margin: 0 auto;">
         </div>
+    </div>
     </div>
     
 
@@ -568,14 +452,21 @@
     
 
     
-
+    <div class="cpp">
     <div class="jumbotron text-center">
         <h1 style="font-style: italic;" class="display-4 ">Integrates with</h1>
     </div>
 
     <div class="row mt-5">
-        <div class="col-md-5 mx-auto">
-            <img src="https://media.sproutsocial.com/uploads/2023/10/Social-Media-Algorithm-Final-Final.jpg" class="img-fluid" alt="Placeholder Image">
+        <div class="col-md-6 mx-auto">
+            <ul class="list-unstyled d-flex justify-content-center">
+                <li class="mr-3"><i class="fab fa-facebook-f fa-3x"></i></li>
+                <li class="mr-3"><i class="fab fa-twitter fa-3x"></i></li>
+                <li class="mr-3"><i class="fab fa-instagram fa-3x"></i></li>
+                <li class="mr-3"><i class="fab fa-youtube fa-3x"></i></li>
+                <li class="mr-3"><i class="fab fa-pinterest fa-3x"></i></li>
+                <li class="mr-3"><i class="fab fa-snapchat-ghost fa-3x"></i></li>
+            </ul>
         </div>
     </div>
 </div>
