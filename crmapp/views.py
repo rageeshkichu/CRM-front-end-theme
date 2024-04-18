@@ -19,7 +19,6 @@ def navbar2(request):
 
 
 def dash(request):
-    # Retrieve the dragged card's HTML from the URL parameter
     dragged_html_encoded = request.GET.get('draggedHTML', None)
     dragged_html = unquote(dragged_html_encoded) if dragged_html_encoded else None
     return render(request, 'dash.html', {'dragged_html': dragged_html})

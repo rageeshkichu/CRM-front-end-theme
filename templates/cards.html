@@ -10,6 +10,7 @@
     <style>
         .navbar {
             z-index: 9999;
+            background-color: #074173
         }
 
         .dropdown-menu {
@@ -25,7 +26,7 @@
             width: 250px;
             z-index: 1;
             overflow-y: auto;
-            background-color: #f8f9fa;
+            background-color: #074173;
             border-right: 1px solid #111213;
             transition: left 0.3s ease;
             padding-top: 60px; 
@@ -40,14 +41,12 @@
 
         .navbar-vertical.open {
             left: 0; 
+            margin-top: 100px;
         }
 
-        .navbar-vertical .dropdown-menu {
-            position: static;
-            float: none;
-        }
 
         .navbar-vertical .nav-item {
+            background-color: #5DEBD7;
             width: 100%;
             margin-bottom: 10px;
             margin-left: -20px;
@@ -57,7 +56,7 @@
             display: flex;
             align-items: center;
             padding: 10px 20px;
-            color: brown;
+            color: white;
             transition: background-color 0.3s; 
             border: 1px solid #dee2e6; 
             margin-bottom: 10px; 
@@ -65,8 +64,8 @@
         }
 
         .navbar-vertical .nav-item a:hover {
-            background-color: #e0a615; 
-            color: #007bff; 
+            background-color: #1C4E80; 
+            color: white; 
         }
 
         .navbar-vertical .nav-item a i {
@@ -88,8 +87,8 @@
             bottom: 0;
             width: 100%;
             height: 2.5rem;
-            background-color: #f8f9fa;
-            color: #495057;
+            background-color: #102C57;
+            color: white;
             text-align: center;
             padding: 10px 0;
         }
@@ -101,7 +100,7 @@
             padding-bottom: 2.5rem;
         }
         body{
-            background-color: #eaf2e3;
+            background-color: #1679AB;
             font-family: Arial, sans-serif;
         }
         .card{
@@ -191,7 +190,7 @@
 
         .bar {
             width: 200px;
-            background-color: #007bff;
+            background-color: #1C4E80;
             border-radius: 5px;
             margin-bottom: 5px;
             position: relative;
@@ -231,13 +230,68 @@
         padding-left: 0; 
     }
 }
+    .wrapperr{
+        width: 90%;
+        height: auto;
+        margin: auto;
+        background-color: white;
+    }
+    h5{
+        color: #1C4E80;
+    }
+    .card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: #1C4E80;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.icon-container i {
+    color: #fff;
+    font-size: 30px;
+}
+
+.card-title {
+    color: #1C4E80;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-secondary {
+    background-color: #1C4E80;
+    border-color: #1C4E80;
+}
+
+.btn-secondary:hover {
+    background-color: #154167;
+    border-color: #154167;
+    color: #fff;
+}
     </style>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light fixed-top">
+<nav  class="navbar navbar-dark  fixed-top">
     <a class="navbar-brand" href="#" onclick="toggleNavbar()">CRM</a>
 </nav>
-
+<div class="wrapperr">
 <nav class="navbar-vertical" id="navbarVertical">
     <ul class="flex-column">
         <li class="nav-item">
@@ -272,14 +326,17 @@
 </nav>
 <div class="connn">
 <div style=" margin-bottom: 80px; margin-top: 120px;" class="container">
-    <h1>Welcome to the Dashboard</h1>
+    <h1 style="padding-top: 50px; color: #1C4E80;">Welcome to the Dashboard</h1>
     <p>This is where you can view important information and statistics about your CRM system.</p>
     
     
-    <div class="row">
+    <div style="margin-bottom: 80px;" class="row">
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
+                    <div class="icon-container">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <h5 class="card-title">Total Sales</h5>
                     <p class="card-text">View the total number of sales made and track progress</p>
                     <a href="#" class="btn btn-secondary">View Sales</a>
@@ -289,18 +346,24 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
+                    <div class="icon-container">
+                        <i class="fas fa-users"></i>
+                    </div>
                     <h5 class="card-title">New Customers</h5>
                     <p class="card-text">See how many new customers have joined recently.</p>
-                    <a href="#" class="btn btn-success">View Customers</a>
+                    <a href="#" class="btn btn-secondary">View Customers</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
+                    <div class="icon-container">
+                        <i class="fas fa-tasks"></i>
+                    </div>
                     <h5 class="card-title">Pending Tasks</h5>
                     <p class="card-text">Check out the tasks that are pending completion.</p>
-                    <a href="#" class="btn btn-info">View Tasks</a>
+                    <a href="#" class="btn btn-secondary">View Tasks</a>
                 </div>
             </div>
         </div>
@@ -328,10 +391,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Progress Tracking</h5>
                     <div class="progress mb-3">
-                        <div class="progress-bar"  role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                        <div class="progress-bar" role="progressbar" style="width: 60%; background-color: #1C4E80" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
                     </div>
                     <p class="card-text">Progress towards achieving a specific goal.</p>
-                    <a href="#" class="btn btn-success">View Goal</a>
+                    <a href="#" class="btn btn-secondary">View Goal</a>
                 </div>
             </div>
         </div>
@@ -367,7 +430,7 @@
         </div>
     </div>
 
-    <h2 style="margin-top: 50px;">Customer reviews</h2>
+    <h2 style="margin-top: 50px; color: #1C4E80;">Customer reviews</h2>
 
     <div class="row mt-4">
         <div class="col-md-3">
@@ -412,14 +475,14 @@
                     src="https://t4.ftcdn.net/jpg/00/77/17/99/360_F_77179934_5gsWGgjiAp1oQPAYontd9I8m6FnL4og0.webp"
                     alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Smith</h5>
+                    <h5 class="card-title">Ryan</h5>
                     <p class="card-text">Really happy...</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mt-4">
+    <div style="padding-bottom: 50px;" class="row mt-4">
         <div class="col-md-3">
             <div class="custom-card" draggable="true" ondragstart="drag(event)" id="dragData5">
                 <img class="card-img-top"
@@ -477,43 +540,54 @@
     </div>
 </div>
 </div>
+</div>
 <script>
+    // Function to allow dropping
     function allowDrop(event) {
         event.preventDefault();
     }
 
-    
+    // Function to handle drag start
     function drag(event) {
         event.dataTransfer.setData("text", event.target.id);
-        document.getElementById('popup').style.display = 'block';
+        // Show the popup when dragging starts
+        showPopup();
     }
 
+    // Function to close the popup
     function closePopup() {
         document.getElementById('popup').style.display = 'none';
     }
 
+    // Add event listener for dragover on the popup
     document.getElementById('popup').addEventListener('dragover', function (event) {
         event.preventDefault();
     });
 
+    // Add event listener for drop on the popup
     document.getElementById('popup').addEventListener('drop', function (event) {
         event.preventDefault();
         var fetchData = event.dataTransfer.getData("text");
         var draggedElement = document.getElementById(fetchData);
+        // Remove the dragged element from its parent
         draggedElement.parentNode.removeChild(draggedElement);
+        // Store the dragged HTML in session storage
         var draggedHTML = draggedElement.outerHTML;
         var savedHTMLArray = JSON.parse(sessionStorage.getItem("draggedHTMLArray")) || [];
         savedHTMLArray.push(draggedHTML);
         sessionStorage.setItem("draggedHTMLArray", JSON.stringify(savedHTMLArray));
+        // Hide the popup after dropping
         document.getElementById('popup').style.display = 'none';
     });
 
+    // Add event listener for dragend on draggable elements
     document.querySelectorAll("[draggable=true]").forEach(function (element) {
         element.addEventListener("dragend", function (event) {
             event.target.parentNode.removeChild(event.target);
         });
     });
 
+    // Retrieve saved HTML from session storage
     var savedHTMLArray = JSON.parse(sessionStorage.getItem("draggedHTMLArray"));
 
     if (savedHTMLArray && savedHTMLArray.length > 0) {
@@ -524,14 +598,83 @@
             document.getElementById(cardId).remove();
         });
     }
+
+    // Touch event handlers
+    var touchStartX, touchStartY, touchEndX, touchEndY;
+
+function touchStart(event) {
+    // Store the initial touch position
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+    // Show the popup immediately on touch start
+    showPopup();
+    // Set the draggedElement to the entire card element containing the touched part
+    draggedElement = event.target.closest('.custom-card');
+}
+
+function touchMove(event) {
+    // Prevent scrolling while dragging
+    event.preventDefault();
+}
+
+function touchEnd(event) {
+    // Get the final touch position
+    touchEndX = event.changedTouches[0].clientX;
+    touchEndY = event.changedTouches[0].clientY;
+    // Check if it's a swipe gesture or a tap
+    if (Math.abs(touchEndX - touchStartX) < 10 && Math.abs(touchEndY - touchStartY) < 10) {
+        // If it's a tap, trigger a click event
+        event.target.click();
+    } else {
+        // If it's a swipe, handle the drag and drop
+        if (draggedElement && draggedElement.parentNode) {
+            // Remove the dragged element from its parent node
+            draggedElement.parentNode.removeChild(draggedElement);
+
+            // Save the HTML of the dragged element to session storage
+            var savedHTMLArray = JSON.parse(sessionStorage.getItem("draggedHTMLArray")) || [];
+            savedHTMLArray.push(draggedElement.outerHTML);
+            sessionStorage.setItem("draggedHTMLArray", JSON.stringify(savedHTMLArray));
+
+            // Reset the dragged element
+            draggedElement = null;
+            // Hide the popup
+            hidePopup();
+        }
+    }
+}
+
+// Function to show the popup
+function showPopup() {
+    document.getElementById('popup').style.display = 'block';
+}
+
+// Function to hide the popup
+function hidePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+// Function to render cards from session storage
+function renderCardsFromStorage() {
+    var savedHTMLArray = JSON.parse(sessionStorage.getItem("draggedHTMLArray")) || [];
+    savedHTMLArray.forEach(function (html) {
+        var tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+        document.body.appendChild(tempDiv.firstChild);
+    });
+}
+
+// Add touch event listeners to draggable elements
+document.querySelectorAll(".custom-card").forEach(function (element) {
+    element.addEventListener("touchstart", touchStart);
+    element.addEventListener("touchmove", touchMove);
+    element.addEventListener("touchend", touchEnd);
+});
+
+// Render cards from session storage
+
+
 </script>
-</div>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 <script>
     function toggleNavbar() {
         var navbar = document.getElementById('navbarVertical');
@@ -547,6 +690,7 @@
     });
 
 </script>
+
 
 {% block content %}
 {% endblock %}
