@@ -11,12 +11,6 @@ def navbar(request):
 def home(request):
     return render(request,'home.html')
 
-def cards(request):
-    return render(request,'cards.html')
-
-def navbar2(request):
-    return render(request,'navbar2.html')
-
 
 def dash(request):
     dragged_html_encoded = request.GET.get('draggedHTML', None)

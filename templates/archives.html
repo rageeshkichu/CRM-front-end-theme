@@ -11,6 +11,7 @@
     <style>
         .navbar {
             z-index: 9999;
+            background-color: #074173
         }
 
         .dropdown-menu {
@@ -26,7 +27,7 @@
             width: 250px;
             z-index: 1;
             overflow-y: auto;
-            background-color: #f8f9fa;
+            background-color: #074173;
             border-right: 1px solid #111213;
             transition: left 0.3s ease;
             padding-top: 60px; 
@@ -36,18 +37,17 @@
             .navbar-vertical {
                 left: -250px; /* Initially hidden on smaller screens */
             }
+            
         }
 
         .navbar-vertical.open {
             left: 0; 
+            margin-top: 100px;
         }
 
-        .navbar-vertical .dropdown-menu {
-            position: static;
-            float: none;
-        }
 
         .navbar-vertical .nav-item {
+            background-color: #5DEBD7;
             width: 100%;
             margin-bottom: 10px;
             margin-left: -20px;
@@ -57,7 +57,7 @@
             display: flex;
             align-items: center;
             padding: 10px 20px;
-            color: brown;
+            color: white;
             transition: background-color 0.3s; 
             border: 1px solid #dee2e6; 
             margin-bottom: 10px; 
@@ -65,8 +65,8 @@
         }
 
         .navbar-vertical .nav-item a:hover {
-            background-color: #e0a615; 
-            color: #007bff; 
+            background-color: #1C4E80; 
+            color: white; 
         }
 
         .navbar-vertical .nav-item a i {
@@ -113,42 +113,42 @@
 </head>
 <body>
     
-<nav class="navbar navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="#" onclick="toggleNavbar()">CRM</a>
-</nav>
-
-<nav class="navbar-vertical" id="navbarVertical">
-    <ul class="flex-column">
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'dash' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'archives' %}"><i class="fas fa-tachometer-alt"></i> Archives</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href=""><i class="fas fa-money-bill-wave"></i> Finance</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href=""><i class="fas fa-chart-line"></i> Sales</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href=""><i class="fas fa-users"></i> Human Resource</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href=""><i class="fas fa-globe"></i> Websites</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href=""><i class="fas fa-cogs"></i> Services</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href=""><i class="fas fa-check-circle"></i> Productivity</a>
-        </li>
-    </ul>
-</nav>
+    <nav  class="navbar navbar-dark  fixed-top">
+        <a class="navbar-brand" href="#" onclick="toggleNavbar()">CRM</a>
+    </nav>
+    <div class="wrapperr">
+    <nav class="navbar-vertical" id="navbarVertical">
+        <ul class="flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
+            </li>
+    
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'dash' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'archives' %}"><i class="fas fa-tachometer-alt"></i> Archives</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=""><i class="fas fa-money-bill-wave"></i> Finance</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=""><i class="fas fa-chart-line"></i> Sales</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=""><i class="fas fa-users"></i> Human Resource</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=""><i class="fas fa-globe"></i> Websites</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=""><i class="fas fa-cogs"></i> Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=""><i class="fas fa-check-circle"></i> Productivity</a>
+            </li>
+        </ul>
+    </nav>
 <div class="connn">
     <div style="margin-top: 100px;" class="container">
         <a hidden href="{% url 'dash' %}" id="cardsLink">cards</a>
@@ -163,7 +163,6 @@
 <script>
     function handleCardsLinkClick(event) {
         event.preventDefault();
-        // window.open("{% url 'cards' %}", "_self");
     }
 
     document.getElementById("cardsLink").addEventListener("click", handleCardsLinkClick);
